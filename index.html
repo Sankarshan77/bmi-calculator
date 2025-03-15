@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <p>Check your Body Mass Index</p>
+        
+        <!-- Weight Input with Unit -->
+        <div class="input-group">
+            <label for="weight">Weight</label>
+            <div class="input-box">
+                <input type="number" id="weight" placeholder="Enter weight" onkeydown="focusNext(event, 'height')">
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                    <option value="stone">stone</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Height Input with Unit -->
+        <div class="input-group">
+            <label for="height">Height</label>
+            <div class="input-box">
+                <input type="number" id="height" placeholder="Enter height" onkeydown="calculateOnEnter(event)">
+                <select id="height-unit">
+                    <option value="cm">cm</option>
+                    <option value="inches">inches</option>
+                    <option value="feet">feet</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <button class="calculate-btn" onclick="calculateBMI()">Calculate BMI</button>
+
+        <!-- Result Display -->
+        <div class="result">
+            <h2>Your BMI: <span id="bmi-value">--</span></h2>
+            <p class="bmi-category" id="bmi-category"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
